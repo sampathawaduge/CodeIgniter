@@ -16,7 +16,7 @@
 	    	<script type="text/javascript" src="<?php echo base_url('/assets/js/jquery.easings.min.js')?>"></script>
 	    	<script type="text/javascript" src="<?php echo base_url('/assets/js/jquery.slimscroll.min.js')?>"></script>
 	    	<script type="text/javascript" src="<?php echo base_url('/assets/js/material.min.js')?>"></script>
-	    	<script type="text/javascript" src="<?php echo base_url('/assets/js/first.js')?>"></script>
+	    	
 
 	    	<meta name="viewport" content="width=device-width, initial-scale=1">
 
