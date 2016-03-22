@@ -9,11 +9,8 @@
     	}
     	public function index()
     	{
-    		$this->load->view("landing_page");
+    		$this->load->view("submit");
 
     	}
-    	public function show()
-    	{
-    		
-    	}
+    	
     }
