@@ -1,0 +1,22 @@
+.page-content
+{
+	background-color: gray;
+}
+textarea
+{
+	resize:none;
+}
+.textarea
+{
+	margin-top: 30px;
+	margin-left:250px;
+}
+.Add_button
+{
+	margin-top: 20px;
+}
+#demo-menu-lower-left
+{
+	margin-top: 15px;
+	margin-left: 10px;
+}
