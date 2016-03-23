@@ -1,4 +1,4 @@
-.page-content
+body
 {
 	background-color: gray;
 }
@@ -19,4 +19,8 @@ textarea
 {
 	margin-top: 15px;
 	margin-left: 10px;
+}
+#category
+{
+	margin-top: 20px;
 }
