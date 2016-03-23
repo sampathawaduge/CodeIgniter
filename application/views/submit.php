@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/core.css') ?>">
 
+
     <script type="text/javascript" src="<?php echo base_url('/assets/js/jquery-1.12.2.min.js') ?>"></script>
 		<script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url('/assets/css/bootstrap.min.js')?>"></script>
@@ -46,29 +47,33 @@
     			<div class="col-lg-10">
     				<label for="comment">Submit Your Idea</label>
   					<textarea class="form-control" rows="5" id="comment"></textarea>
-  					<button type="button" class="btn btn-primary btn-lg Add_button" id="idea_button">Add Idea</button>
+  					<button type="button" class="btn btn-primary btn-sm Add_button" id="idea_button">Add Idea</button>
 
-  					<!-- Left aligned menu below button -->
-					<button id="demo-menu-lower-left"
-					        class="mdl-button mdl-js-button mdl-button--icon">
-					  <i class="material-icons">more_vert</i>
-					</button>
 
-					<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-					    for="demo-menu-lower-left">
-					  <li class="mdl-menu__item" value="1">Sports</li>
-					  <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Acadamic</li>
-					  <li class="mdl-menu__item">Lectures</li>
-					  <li class="mdl-menu__item">Administration</li>
-					</ul>
 
-    			</div>
-    		</div>
-		</div>
-
-    </div>
-  </main>
+             <div class="dropdown" id="category">
+  <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown">Categories
+  <span class="caret"></span></button>
+  <ul class='dropdown-menu' id='category'>
+  <?php
+      
+    foreach ($test as $key) {
+            echo "<li><a>".$key->name."<a></li>";
+          }
+  
+  ?>
+  </ul>
 </div>
 
+     
+    			</div>
+    		</div>
+		  </div>
+
+      
+    </div>
+  </main>
+
+</div> 
 	</body>
 </html>
