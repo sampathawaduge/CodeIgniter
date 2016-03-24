@@ -62,7 +62,9 @@
           }
   
   ?>
+
   </ul>
+
 </div>
 
      
@@ -72,8 +74,26 @@
 
       
     </div>
+    <table class="table table-hover">
+    <?php 
+    echo '<div class="row">';
+
+          foreach ($sub as $key) {
+
+        
+        echo '<div class="col-lg-10">';
+        echo '<div class="well well-lg">'.$key->description.'</div>';
+        echo '</div>';
+        
+              }
+              echo '<div>';
+
+    ?>
+
+    </table>
   </main>
 
 </div> 
+
 	</body>
 </html>

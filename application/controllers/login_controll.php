@@ -11,9 +11,12 @@
     	{
             $this->load->model('Submission');
             $query=$this->Submission->student_subcategories();
-            if($query)
+            $sub=$this->Submission->get_submissions();
+
+            if($query && $sub)
             {
                 $data['test']=$query;
+                $data['sub']=$sub;
                 $this->load->view("submit",$data);
             }
 
@@ -27,8 +30,8 @@
             $array=[
                 'description'=>$comment,
                 'subcategory'=>$subcat,
-                'user'=>'test',
-                'submission_id'=>1
+                'user'=>'yo',
+                'submission_id'=>4
             ];
             $this->load->model("Submission");
             $this->Submission->insert_submission($array);
