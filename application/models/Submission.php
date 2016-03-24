@@ -19,6 +19,12 @@
 			$data=$result->result();
 			return $data;
 		}
+		public function get_submissions()
+		{
+			$submission=$this->db->get('tbl_Submission');
+			$data=$submission->result();
+			return $data;
+		}
 
 	}
 ?>
