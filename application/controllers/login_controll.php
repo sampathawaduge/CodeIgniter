@@ -29,11 +29,17 @@
                 'description'=>$comment,
                 'subcategory'=>$subcat,
                 'user'=>'he',
-                'submission_id'=>2,
+                'submission_id'=>5,
             ];
             $this->load->model("Submission");
             $this->Submission->insert_submission($array);
 
         }
+        public function test()
+        {
+            echo $this->uri->segment(3);
+
+        }
+
     	
     }

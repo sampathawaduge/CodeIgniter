@@ -9,6 +9,7 @@
 		<link href='http://fonts.which is googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/core.css') ?>">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
     <script type="text/javascript" src="<?php echo base_url('/assets/js/jquery-1.12.2.min.js') ?>"></script>
@@ -74,26 +75,22 @@
 
       
     </div>
-    <table class="table table-hover">
-    <?php 
-    echo '<div class="row">';
+      <div class="row">
+      <?php
+        foreach ($sub as $key)
+        {
+            echo '<div class="col-lg-10">';
+            echo '<div class="well well-lg">'.$key->description.'<br>'.'<br>';
+            echo '<a href="#">'.'<input type="button" class="btn btn-success" value="Add">'.'</a>';
+            echo '</div>';
+            echo '</div>';
+        }
+      ?>
+      </div>
 
-          foreach ($sub as $key) {
-
-        
-        echo '<div class="col-lg-10">';
-        echo '<div class="well well-lg">'.'<a href="#">'.$key->description.'</a></div>';
-        echo '</div>';
-        
-              }
-              echo '<div>';
-
-    ?>
-
-    </table>
   </main>
 
-</div> 
+</>
 
 	</body>
 </html>
