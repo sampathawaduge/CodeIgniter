@@ -82,7 +82,7 @@
 
         
         echo '<div class="col-lg-10">';
-        echo '<div class="well well-lg">'.$key->description.'</div>';
+        echo '<div class="well well-lg">'.'<a href="#">'.$key->description.'</a></div>';
         echo '</div>';
         
               }

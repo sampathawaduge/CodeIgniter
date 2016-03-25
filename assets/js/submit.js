@@ -18,7 +18,7 @@ $(document).ready(function(){
 				data:{comment:comment,subcat:selection},
 				success:function(data)
 				{
-					alert(data);
+					location.reload();
 				}
 			});
 		}

@@ -6,19 +6,17 @@
     	{
     		parent::__construct();
     		$this->load->helper('url');
+
     	}
     	public function index()
     	{
             $this->load->model('Submission');
             $query=$this->Submission->student_subcategories();
             $sub=$this->Submission->get_submissions();
-
-            if($query && $sub)
-            {
-                $data['test']=$query;
-                $data['sub']=$sub;
-                $this->load->view("submit",$data);
-            }
+            $data['test']=$query;
+            $data['sub']=$sub;
+            $this->load->view("submit",$data);
+            
 
 
     	}
@@ -30,12 +28,12 @@
             $array=[
                 'description'=>$comment,
                 'subcategory'=>$subcat,
-                'user'=>'yo',
-                'submission_id'=>4
+                'user'=>'he',
+                'submission_id'=>2,
             ];
             $this->load->model("Submission");
             $this->Submission->insert_submission($array);
-        
+
         }
     	
     }
