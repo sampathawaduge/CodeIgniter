@@ -25,6 +25,7 @@
 			$data=$submission->result();
 			return $data;
 		}
+        
 
 	}
 ?>
