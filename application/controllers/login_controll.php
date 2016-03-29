@@ -16,30 +16,23 @@
             $data['test']=$query;
             $data['sub']=$sub;
             $this->load->view("submit",$data);
-            
-
-
     	}
         public function show()
         {
             $comment=$this->input->post('comment');
             $subcat=$this->input->post('subcat');
 
+
             $array=[
                 'description'=>$comment,
-                'subcategory'=>$subcat,
-                'user'=>'he',
-                'submission_id'=>5,
+                'submission_category'=>$subcat,
+                'submission_user'=>'he'
             ];
             $this->load->model("Submission");
             $this->Submission->insert_submission($array);
 
         }
-        public function test()
-        {
-            echo $this->uri->segment(3);
-
-        }
+        
 
     	
     }

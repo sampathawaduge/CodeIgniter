@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var selection=null;
-
+	
 	$("#category li").click(function(){
 		selection=$(this).text();
 	});
@@ -10,7 +10,7 @@ $(document).ready(function(){
 		var comment=$.trim($("#comment").val());
 		if(comment && selection)
 		{
-
+			
 			$.ajax({
 
 				url:"http://localhost:81/CodeIgniter/index.php/login_controll/show",
