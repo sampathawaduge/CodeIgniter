@@ -83,8 +83,8 @@
                 foreach($sub as $row)
                     {
                       $description = $row['description'];
-                      $subcategory = $row['subcategory'];
-                      $user = $row['user'];
+                      $subcategory = $row['submission_category'];
+                      $user = $row['submission_user'];
                       echo "SUBMISSION CATEGORY : <b>".$subcategory."</b>";
                       echo "<h4><b>".$description."</b></h4>";
                       echo "<i class ='fa fa-user fa-2x'></i><span> </span>".$user;
@@ -119,7 +119,7 @@
             <div class="well">
                         <?php
                       $description = $row['description'];
-                      $user = $row['user'];
+                      $user = $row['comment_user'];
                       $com_id = $row['comment_id'];
                         echo "<h5><i class ='fa fa-user'></i><span> </span>".$user."</h5>";
                         echo "<i class ='fa fa-book'></i><span> </span>".$description;
@@ -145,7 +145,12 @@
                <textarea class="form-control" rows="5" id="idea_txt"></textarea></br>
                 <i class="fa fa-photo"></i><span> </span><b>IMAGE</b><input class="btn btn-default" type="file" name="idea_image"/>
                 <i class="fa fa-file"></i><span> </span><b>DOCUMENT</b><input class="btn btn-default" type="file" name="idea_doc"/><br>
-                <input class="btn-default" type="button" name="add_idea_submit" class="button" value="submit" id="add_idea_submit"></input>
+                <?php
+                  echo '<a href="http://localhost:81/CodeIgniter/index.php/comment_controller/show/'.$row['submission_id'].'">';
+                  echo "<input class='btn-default' type='button' name='add_idea_submit' class='button' value='submit' id='add_idea_submit'></input>";
+                  echo "</a>";
+                ?>
+                
            </div>
           </div>
         </div>
