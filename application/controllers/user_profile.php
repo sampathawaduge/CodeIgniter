@@ -6,34 +6,33 @@
     	{
     		parent::__construct();
     		$this->load->helper('url');
+			$this->load->library('session');
     
     	}
 
 		public function index()
 		{
+			if(empty($this->session->userdata['username']))
+			{
+				redirect(site_url('login'));
+			}else {
+				$user = $this->session->userdata['username'];
+				$this->load->model('userprof');
 
-			$user='ud';
-			$this->load->model('userprof');
-           
-            $subs=$this->userprof->getSubmissions($user);
-           
-            $data['subs']=$subs;
-            $data['user']=$user;
+				$subs = $this->userprof->getSubmissions($user);
 
-            $details=$this->userprof->getUserDetails($user);
-           
-            $data['details']=$details;
+				$data['subs'] = $subs;
+				$data['user'] = $user;
 
-            $this->load->view("userprofile",$data);
+				$details = $this->userprof->getUserDetails($user);
 
+				$data['details'] = $details;
+
+				$this->load->view("userprofile", $data);
+			}
 
 
 		
 		}
-
-		public function show()
-        {
-
-        }
 
 	}

@@ -6,13 +6,13 @@ $(document).ready(function(){
 		if(idea)
 		{
 			$.ajax({
-				url:"http://localhost:81/CodeIgniter/index.php/comment_controller/add_idea",
+				url:"http://localhost/CodeIgniter/index.php/comment_controller/add_idea",
 				type:"POST",
 				data:{comment:idea},
 				success:function(data)
 				{
-					// location.reload();
-					 alert(data);
+					location.reload();
+					// alert(data);
 					
 				}
 			});

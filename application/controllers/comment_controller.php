@@ -20,7 +20,7 @@
             
             $array=[
                 'description'=>$idea_txt,
-                'comment_user' => "charith11s",
+                'comment_user' => $this->session->userdata['username'],
                 'submission_id' =>$submissionid
             ];
             $this->load->model("view_submition");
@@ -32,19 +32,24 @@
         }
         public function show()
         {
-            $sub_id=$this->uri->segment(3);
+            if(empty($this->session->userdata['username']))
+            {
+                redirect(site_url('login'));
+            }else {
+                $sub_id = $this->uri->segment(3);
 
-            $this->session->set_userdata(array('subbid'=>$sub_id));
-            
-            $this->load->model('view_submition');
-            
-            $sub=$this->view_submition->view_sub($sub_id);
-            
-            $com=$this->view_submition->view_comment($sub_id);
+                $this->session->set_userdata(array('subbid' => $sub_id));
 
-            $data['sub']=$sub;
-            $data['com']=$com;
-            $this->load->view("list",$data);
+                $this->load->model('view_submition');
+
+                $sub = $this->view_submition->view_sub($sub_id);
+
+                $com = $this->view_submition->view_comment($sub_id);
+
+                $data['sub'] = $sub;
+                $data['com'] = $com;
+                $this->load->view("list", $data);
+            }
         }
 
         

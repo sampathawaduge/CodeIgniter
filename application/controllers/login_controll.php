@@ -6,16 +6,23 @@
     	{
     		parent::__construct();
     		$this->load->helper('url');
+            $this->load->library('session');
 
     	}
     	public function index()
     	{
-            $this->load->model('Submission');
-            $query=$this->Submission->student_subcategories();
-            $sub=$this->Submission->get_submissions();
-            $data['test']=$query;
-            $data['sub']=$sub;
-            $this->load->view("submit",$data);
+            if(empty($this->session->userdata['username']))
+            {
+                redirect(site_url('login'));
+            }else {
+                $this->load->model('Submission');
+
+                $query = $this->Submission->student_subcategories($this->session->userdata['username']);
+                $sub = $this->Submission->get_submissions();
+                $data['test'] = $query;
+                $data['sub'] = $sub;
+                $this->load->view("submit", $data);
+            }
     	}
         public function show()
         {
@@ -26,7 +33,7 @@
             $array=[
                 'description'=>$comment,
                 'submission_category'=>$subcat,
-                'submission_user'=>'he'
+                'submission_user'=>$this->session->userdata['username']
             ];
             $this->load->model("Submission");
             $this->Submission->insert_submission($array);

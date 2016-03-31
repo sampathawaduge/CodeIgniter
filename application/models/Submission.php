@@ -13,10 +13,14 @@
 				echo true;
 			}
 		}
-		public function student_subcategories()
+		public function student_subcategories($user)
 		{
-			// $result=$this->db->get('tbl_Student_Subcat');
-			$result=$this->db->query("select * from tbl_Submission_Category where type_id = 3");
+			$sql="select * from tbl_User where name = ?";
+			$query=$this->db->query($sql,array($user));
+			$ans=$query->row();
+
+
+			$result=$this->db->query("select * from tbl_Submission_Category where type_id like '".$ans->category."'");
 			$data=$result->result();
 			return $data;
 		}
