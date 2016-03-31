@@ -12,19 +12,20 @@ $(document).ready(function(){
 
              $.ajax({
 
-                 url:"http://localhost:81/CodeIgniter/index.php/register_controller/register",
+                 url:"http://localhost/CodeIgniter/index.php/register_controller/register",
                  type:"POST",
                  data:{username:username,email:email,password:password,category:category},
                  success:function(data)
                  {
                      alert("Registration complete...!");
+                     window.location.href="http://localhost/CodeIgniter/index.php/login";
                      //location.reload();
                  }
              });
          }
          else
          {
-             alert("field Is Empty");
+             alert("There can not be Empty Fields");
          }
    
          });

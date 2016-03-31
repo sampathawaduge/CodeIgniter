@@ -35,15 +35,15 @@
         <div class="mdl-layout__header-row">
             <!-- Title -->
 
-            <span class="mdl-layout-title">Ideas</span>
-        </div>
+            <span class="mdl-layout-title"><b><img src="https://www.uniagents.com/institution-logo/institution-logo-104.png" width="40" height="40" style="margin-left:20px;"><span> </span>CURTIN UNIVERSITY IDEA MANAGEMENT SYSTEM</b></span>
+
 
     </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">IDEAS</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="<?php echo site_url('/register_controller')?>">Register</a>
-            <a class="mdl-navigation__link" href="">Log-in</a>
+            <a class="mdl-navigation__link" href="<?php echo site_url('/login')?>">Log-in</a>
 
         </nav>
     </div>
@@ -54,7 +54,7 @@
             <div class="form-group">
                 <div class="row textarea">
 
-                    <!-- view selected submission -->
+                    <!-- view register -->
                     <div class="col-lg-11">
                         <div class="well">
                             <div class="form-group">
@@ -77,8 +77,8 @@
                                     <td><i class="fa fa-sort"></i><span> </span>Category</td>
                                     <td><select id="category" class="form-control">
                                             <option value="student">Student</option>
-                                            <option value="staff">Acadamic Staff</option>
-                                            <option value="adminstration">Non Acadamic Staff</option>
+                                            <option value="acadamic_staff">Acadamic Staff</option>
+                                            <option value="non_acadamic_staff">Non Acadamic Staff</option>
                                         </select></td>
                                 </tr>
                                 <tr>

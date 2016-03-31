@@ -25,8 +25,8 @@
   input.star { display: none; }
     label.star {
       float: right;
-      padding: 10px;
-      font-size: 36px;
+      padding: 6px;
+      font-size: 20px;
       color: #444;
       transition: all .2s;
     }
@@ -56,17 +56,20 @@
             <div class="mdl-layout__header-row">
         <!-- Title -->
 
-                <span class="mdl-layout-title">Ideas</span>
-            </div>
+                <span class="mdl-layout-title"><b><img src="https://www.uniagents.com/institution-logo/institution-logo-104.png" width="40" height="40" style="margin-left:20px;"><span> </span>CURTIN UNIVERSITY IDEA MANAGEMENT SYSTEM</b></span>
+
+                <div style="margin-left:450px;"> <?php echo "<b><i>Welcome - </i></b> ".$this->session->userdata['username']; ?><img src="https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.png" width="40" height="40" style="margin-left:20px;"> </div>  </div>
               
   </header>
       <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">IDEAS</span>
             <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="">User Profile</a>
+              <a class="mdl-navigation__link" href="<?php echo site_url('/user_profile')?>">User Profile</a>
               <a class="mdl-navigation__link" href="">FAQ</a>
               <a class="mdl-navigation__link" href="">About Us</a>
               <a class="mdl-navigation__link" href="">Site Map</a>
+                <a class="mdl-navigation__link" href="<?php echo site_url('/login_controll')?>">Home</a>
+                <a class="mdl-navigation__link" href="<?php echo site_url('/login/logout')?>">Log-out</a>
             </nav>
       </div>
 
@@ -146,7 +149,7 @@
                 <i class="fa fa-photo"></i><span> </span><b>IMAGE</b><input class="btn btn-default" type="file" name="idea_image"/>
                 <i class="fa fa-file"></i><span> </span><b>DOCUMENT</b><input class="btn btn-default" type="file" name="idea_doc"/><br>
                 <?php
-                  echo '<a href="http://localhost:81/CodeIgniter/index.php/comment_controller/show/'.$row['submission_id'].'">';
+                  echo '<a href="http://localhost/CodeIgniter/index.php/comment_controller/show/'.$row['submission_id'].'">';
                   echo "<input class='btn-default' type='button' name='add_idea_submit' class='button' value='submit' id='add_idea_submit'></input>";
                   echo "</a>";
                 ?>

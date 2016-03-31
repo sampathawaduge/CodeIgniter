@@ -9,8 +9,8 @@
 		{
 			
 			$this->db->select('*');
-			$this->db->from('tbl_Submission');
-			$this->db->where('user', $user);
+			$this->db->from('tbl_Submissions');
+			$this->db->where('submission_user', $user);
 			$subs = $this->db->get();
 			return $subs->result();
 		}
